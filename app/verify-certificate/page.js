@@ -28,45 +28,70 @@ export default function VerifyPage() {
   }
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen px-4">
-      <h1 className="text-3xl font-bold mb-4">Verify Your Certificate</h1>
+    <div className="min-h-screen bg-white text-gray-900 flex flex-col">
+      {/* Hero Section */}
+      <section className="bg-red-600 text-white py-20 px-4 text-center">
+        <h1 className="text-4xl md:text-5xl font-bold mb-4">Verify Your Certificate</h1>
+        <p className="max-w-2xl mx-auto text-lg md:text-xl">
+          Enter your certificate code below to confirm its validity with Akebarry Global Services.
+        </p>
+      </section>
 
-      <form onSubmit={handleSubmit} className="w-full max-w-md bg-white shadow-md rounded-lg p-6">
-        <input
-          type="text"
-          value={code}
-          onChange={(e) => setCode(e.target.value)}
-          placeholder="Enter certificate code..."
-          className="w-full border rounded px-3 py-2 mb-3 focus:outline-none focus:ring focus:border-blue-400"
-          required
-        />
-        <button
-          type="submit"
-          disabled={loading}
-          className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700"
-        >
-          {loading ? 'Verifying...' : 'Verify'}
-        </button>
-      </form>
+      {/* Form Section */}
+      <section className="flex flex-col items-center justify-center py-16 px-4">
+        <div className="w-full max-w-md bg-white shadow-lg rounded-lg p-6 border border-gray-200">
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              value={code}
+              onChange={(e) => setCode(e.target.value)}
+              placeholder="Enter certificate code..."
+              className="w-full border border-gray-300 rounded px-3 py-2 mb-4 focus:outline-none focus:ring-2 focus:ring-red-600 focus:border-red-600"
+              required
+            />
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full bg-red-600 text-white py-2 rounded hover:bg-red-700 transition"
+            >
+              {loading ? 'Verifying...' : 'Verify'}
+            </button>
+          </form>
 
-      {result && (
-        <div className="mt-6 text-center">
-          {result.error && <p className="text-red-600">{result.error}</p>}
-          {result.message && (
-            <p className={result.valid ? 'text-green-600' : 'text-red-600'}>
-              {result.message}
-            </p>
-          )}
-          {result.valid && (
-            <div className="mt-2 text-gray-700">
-              <p><strong>Name:</strong> {result.student_name}</p>
-              <p><strong>Course:</strong> {result.course_name}</p>
-              <p><strong>Issued:</strong> {result.issued_date}</p>
-              <p><strong>Code:</strong> {result.code}</p>
+          {result && (
+            <div className="mt-6 text-center">
+              {result.error && <p className="text-red-600 font-semibold">{result.error}</p>}
+              {result.message && (
+                <p className={result.valid ? 'text-green-600 font-semibold' : 'text-red-600 font-semibold'}>
+                  {result.message}
+                </p>
+              )}
+              {result.valid && (
+                <div className="mt-4 text-gray-700 text-left border-t border-gray-200 pt-4 space-y-1">
+                  <p><strong>Name:</strong> {result.student_name}</p>
+                  <p><strong>Course:</strong> {result.course_name}</p>
+                  <p><strong>Issued:</strong> {result.issued_date}</p>
+                  <p><strong>Code:</strong> {result.code}</p>
+                </div>
+              )}
             </div>
           )}
         </div>
-      )}
+      </section>
+
+      {/* CTA Section */}
+      <section className="bg-gray-50 py-16 px-4 text-center">
+        <h2 className="text-3xl font-bold mb-4 text-red-600">Need Help?</h2>
+        <p className="mb-6 max-w-2xl mx-auto text-gray-700">
+          If you experience any issues verifying your certificate, please contact Akebarry Global Services.
+        </p>
+        <a
+          href="/contact"
+          className="bg-red-600 text-white font-semibold px-6 py-3 rounded hover:bg-red-700 transition"
+        >
+          Contact Us
+        </a>
+      </section>
     </div>
   )
 }
