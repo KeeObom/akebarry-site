@@ -8,6 +8,9 @@ import Footer from '../components/Footer'
 export const metadata = {
   title: 'Akebarry Global Services',
   description: 'Fire safety, consultancy, and certificate verification services.',
+  icons: {
+    icon: '/favicon.svg',
+  },
 }
 
 
