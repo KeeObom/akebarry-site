@@ -1,5 +1,6 @@
 'use client'
 import { useState } from 'react'
+import Image from "next/image";
 
 export default function VerifyPage() {
   const [code, setCode] = useState('')
@@ -30,8 +31,23 @@ export default function VerifyPage() {
   return (
     <div className="min-h-screen bg-white text-gray-900 flex flex-col">
       {/* Hero Section */}
-      <section className="bg-red-600 text-white py-20 px-4 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">Verify Your Certificate</h1>
+      <section
+        className="bg-red-600 text-white py-20 px-4 text-center flex flex-col items-center justify-center"
+        style={{
+          backgroundImage: "url('/images/fire-bg.jpg')", // optional background
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+        }}
+      >
+        <div className="flex items-center justify-center gap-4 mb-4">
+          <h1 className="text-4xl md:text-5xl font-bold">Verify Your Certificate</h1>
+          <img
+            src="/images/verify_unsplash.svg"
+            alt="Verify Icon"
+            className="w-10 h-10 md:w-12 md:h-12"
+          />
+        </div>
+
         <p className="max-w-2xl mx-auto text-lg md:text-xl">
           Enter your certificate code below to confirm its validity with Akebarry Global Services.
         </p>

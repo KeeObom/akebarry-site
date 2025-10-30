@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server'
+import Image from "next/image";
 // import { supabase } from '@/lib/supabaseClient'
 import { supabase } from '../../../lib/supabaseClient'
 

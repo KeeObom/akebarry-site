@@ -1,6 +1,7 @@
 // app/about/page.js
 'use client'
 
+import Image from "next/image";
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
@@ -36,33 +37,53 @@ export default function AboutPage() {
       </section>
 
       {/* Team */}
-      <section className="py-16 px-4 md:px-20 text-center">
+      <section className="py-16 px-4 md:px-20 text-center bg-gray-50">
         <h2 className="text-3xl font-bold mb-10 text-red-600">Our Team</h2>
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {/* Team Member */}
-          <div className="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition">
-            <div className="w-32 h-32 mx-auto rounded-full bg-gray-200 mb-4">
-              {/* Placeholder for photo */}
+          {/* Team Member 1 */}
+          <div className="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition flex flex-col items-center">
+            <div className="w-40 h-40 relative mb-4">
+              <Image
+                src="/images/Dad.JPG" 
+                alt="Prince M. N. Akekue"
+                fill
+                className="object-cover rounded-full"
+              />
             </div>
             <h3 className="text-xl font-semibold mb-2 text-red-600">Prince M. N. Akekue</h3>
-            <p className="text-gray-700">MD/CEO – Fire Protection & Safety Expert</p>
+            <p className="text-gray-700 text-center">MD/CEO – Fire Protection & Safety Expert</p>
           </div>
-          <div className="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition">
-            <div className="w-32 h-32 mx-auto rounded-full bg-gray-200 mb-4">
-              {/* Placeholder for photo */}
+
+          {/* Team Member 2 */}
+          <div className="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition flex flex-col items-center">
+            <div className="w-40 h-40 relative mb-4">
+              <Image
+                src="/images/ledua.JPG" 
+                alt="Ledua Zor-Akekue"
+                fill
+                className="object-cover rounded-full"
+              />
             </div>
             <h3 className="text-xl font-semibold mb-2 text-red-600">Ledua Zor-Akekue</h3>
-            <p className="text-gray-700">Director / Legal Adviser</p>
+            <p className="text-gray-700 text-center">Legal Adviser</p>
           </div>
-          <div className="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition">
-            <div className="w-32 h-32 mx-auto rounded-full bg-gray-200 mb-4">
-              {/* Placeholder for photo */}
+
+          {/* Team Member 3 */}
+          <div className="bg-white shadow-md rounded-lg p-6 hover:shadow-xl transition flex flex-col items-center">
+            <div className="w-40 h-40 relative mb-4">
+              <Image
+                src="/images/happiness.JPG"
+                alt="Happiness Bakor"
+                fill
+                className="object-cover rounded-full"
+              />
             </div>
-            <h3 className="text-xl font-semibold mb-2 text-red-600">Prof. Eze Lawrence Chibuogwu</h3>
-            <p className="text-gray-700">Director, Head of Research & HSE Training</p>
+            <h3 className="text-xl font-semibold mb-2 text-red-600">Happiness Bakor</h3>
+            <p className="text-gray-700 text-center">Head of HSE Training</p>
           </div>
         </div>
       </section>
+
 
       {/* CTA / Contact */}
       <section className="bg-red-600 text-white py-16 px-4 text-center">

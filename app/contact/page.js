@@ -1,6 +1,7 @@
 // app/contact/page.js
 'use client'
 
+import Image from "next/image";
 export default function ContactPage() {
   const faqs = [
     {
@@ -33,11 +34,24 @@ export default function ContactPage() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
       {/* Hero Section */}
-      <section className="bg-red-600 text-white py-20 px-4 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold mb-4">Contact Akebarry Global Services</h1>
-        <p className="max-w-2xl mx-auto text-lg md:text-xl">
-          Get in touch with our experts for fire safety, consultancy, and workplace protection services.
-        </p>
+      <section
+        className="relative text-white py-24 px-4 text-center bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/images/contact_arrow_unsplash.jpg')", // 🖼️ replace with your own image
+        }}
+      >
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black bg-opacity-60"></div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-3xl mx-auto">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Contact Akebarry Global Services
+          </h1>
+          <p className="max-w-2xl mx-auto text-lg md:text-xl">
+            Get in touch with our experts for fire safety, consultancy, and workplace protection services.
+          </p>
+        </div>
       </section>
 
       {/* Contact Details */}
@@ -46,7 +60,7 @@ export default function ContactPage() {
         <p className="mb-2 text-gray-700">Office: No. 3 Hilltop Drive, Rumukalagbor, Port Harcourt</p>
         <p className="mb-2 text-gray-700">Workshop: Plot 2, Road 8, Shell Location Road, Rumu-Akania, Port Harcourt</p>
         <p className="mb-2 text-gray-700">Phone: 0803-341-8797 | 0804-880-398</p>
-        <p className="text-gray-700">Email: akebarrynigltd@gmail.com</p>
+        <p className="text-gray-700">Email: akebarryglobalservices@gmail.com</p>
       </section>
 
       {/* FAQs */}
