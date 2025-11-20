@@ -134,6 +134,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <script src="https://www.querybox.app/widget.js" data-org="20" data-color="#d80e2c"></script>
+
       {/* CTA Section */}
       <section className="py-20 px-4 text-center bg-red-600 text-white">
         <h2 className="text-3xl md:text-4xl font-bold mb-6">Ensure Your Safety Today</h2>
